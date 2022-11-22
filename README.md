@@ -43,3 +43,4 @@ Add argv to activate varables from command line
 Stack geometry on center of highest point of geometry
 
 # challenge 4
+Make function that fills the screen with any of the shapes
