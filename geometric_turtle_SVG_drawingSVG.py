@@ -13,8 +13,8 @@ from svg_turtle import SvgTurtle
 
 #set the size of the turtle screen
 # uppercase
-screenheighty = 5000
-screenwidthx = 5000
+screenheighty = 1000
+screenwidthx = 1000
 t = SvgTurtle(screenwidthx, screenheighty, )
 
 rows = 5
@@ -54,9 +54,57 @@ def draw_triangle():
         t.forward(100)
         t.right(120)
 
+
+def draw_concentric_triangle(side):
+    for i in range(3):
+        t.fd(side)
+        t.left(120)
+        side -= 10
+ 
+         
+# Forming the window screen
+    
+    # t.color("orange")
+    
+         
+    
+    # for different shapes
+    side = 300
+    for i in range(10):
+        draw_concentric_triangle(side)
+        side -= 30
+
+draw_concentric_triangle(100)
+
+
+
+
+
+
+
 # create a function that draws a circle
 def draw_circle():
     t.circle(100)
+
+def draw_tangent_circle():
+    # radius for smallest circle
+    r = 10
+    
+    # number of circles
+    n = 10
+    
+    # loop for printing tangent circles
+    for i in range(1, n + 1, 1):
+        t.circle(r * i)
+
+
+def draw_spiral_circle():
+    r = 10
+# Loop for printing spiral circle
+    for i in range(100):
+        t.circle(r + i, 45)
+    
+
 
 #create a function that finds the center of the screen
 def find_center():
@@ -64,8 +112,36 @@ def find_center():
     t.goto(0,0)
     t.pendown()
 
+
+# create a function that draws a cube
+def draw_cube():
+# forming front square face
+    for i in range(4):
+        t.forward(100)
+        t.left(90)
+    
+    # bottom left side
+    t.goto(50,50)
+    
+    # forming back square face
+    for i in range(4):
+        t.forward(100)
+        t.left(90)
+    
+    # bottom right side
+    t.goto(150,50)
+    t.goto(100,0)
+    
+    # top right side
+    t.goto(100,100)
+    t.goto(150,150)
+    
+    # top left side
+    t.goto(50,150)
+    t.goto(0,100)
+
 # create a spiral function that takes a parameter
-def draw_rotation(range_variable = 60, figure = draw_square):
+def draw_rotation(range_variable = 360, figure = draw_cube):
     #make sure the spiral covers 360 degrees
     # note the higher the range_variable, the fewer the squares
     for i in range(int(360/range_variable)):
@@ -73,11 +149,13 @@ def draw_rotation(range_variable = 60, figure = draw_square):
         figure()
         t.right(range_variable)
 
+# draw_rotation()
+
 
 
 
 # create a function that draws a spiral of squares
-def draw_spiral_of_squares():
+def draw_rotations_of_squares():
     #make sure the spiral covers 360 degrees
     # note the higher the range_variable, the fewer the squares
     range_variable = 60
@@ -87,6 +165,7 @@ def draw_spiral_of_squares():
     # for i in range(5):
     #     draw_square()
     #     t.right(5)
+
 
 def draw_benzene_spiral():
     colors = ['red', 'purple', 'blue', 'green', 'orange', 'yellow']
@@ -101,52 +180,56 @@ def draw_benzene_spiral():
 
 
 # # create a for loop that runs through all functions
-# for i in all_functions:
-#     i()
 
 # find_center()
 # draw_rotation(60, draw_star)
-all_functions = [#  draw_benzene_spiral,
-                #  draw_spiral_of_squares,
-                # draw_rotation,
-                # draw_square, 
-                #  find_center,
-                 draw_circle, 
-                # find_center,
-                draw_star,
-                # find_center,
-                 draw_triangle,
-                # find_center,
-                 draw_hexagon,
-                ]
+# draw_tangent_circle()
 
+
+# this should work! :(
+# all_functions = [#  draw_benzene_spiral,
+#                 #  draw_spiral_of_squares,
+#                 # draw_rotation,
+#                 # draw_square, 
+#                 #  find_center,
+#                  draw_circle, 
+#                 # find_center,
+#                 draw_star,
+#                 # find_center,
+#                  draw_triangle,
+#                 # find_center,
+#                  draw_hexagon,
+#                 ]
+
+# for i in all_functions:
+#     i()
 
 # save the drawing
 # go to lower left corner cell
-i = 0
-t.penup()
-t.goto(-screenwidthx/2, screenheighty/2)
-for y in range(rows):
-    for x in range(cols):
-        t.pensize(5)
-        t.penup()
-        t.goto(-screenwidthx/2 + x*width,screenheighty/2 - y*height)
-        t.pendown()
-        #now at top lop left of cell
-        #draw a square
-        for _ in range(2):
-            t.forward(width)
-            t.right(90)
-            t.forward(height)
-            t.right(90)
-        # center of cell
-        t.penup()
-        t.goto(-screenwidthx/2 + x*width + width/2,screenheighty/2 - y*height - height/2)
-        t.pendown()
-        # t.set_heading(0)
-        func = all_functions[i%len(all_functions) ]
-        draw_rotation(60, func)
-        i += 1
+# i = 0
+# t.penup()
+# t.goto(-screenwidthx/2, screenheighty/2)
+# for y in range(rows):
+#     for x in range(cols):
+#         t.pensize(5)
+#         t.penup()
+#         t.goto(-screenwidthx/2 + x*width,screenheighty/2 - y*height)
+#         t.pendown()
+#         #now at top lop left of cell
+#         #draw a square
+#         for _ in range(2):
+#             t.forward(width)
+#             t.right(90)
+#             t.forward(height)
+#             t.right(90)
+#         # center of cell
+#         t.penup()
+#         t.goto(-screenwidthx/2 + x*width + width/2,screenheighty/2 - y*height - height/2)
+#         t.pendown()
+#         # t.set_heading(0)
+#         func = all_functions[i%len(all_functions) ]
+#         draw_rotation(60, func)
+#         i += 1
         
 t.save_as(time_stamp + 'circle_square_example.svg')
 
