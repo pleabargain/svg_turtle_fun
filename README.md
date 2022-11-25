@@ -18,6 +18,10 @@ e.g.
         return f
 ```
 
+# research and dev
+This is exciting!
+https://twitter.com/DiffusionPics/status/1595481498643501056?s=20&t=R2Ly18_Ln0Am0ip3V6Ev2A
+
 # note
 Drawing with SVG turtle doesn't show you the animation! I use VS Code Live Server to view the SVG in the browser.
 
