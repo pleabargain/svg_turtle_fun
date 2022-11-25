@@ -10,6 +10,14 @@ Playing around.
 # pypi
 https://donkirkby.github.io/svg-turtle/
 
+# question
+How can I call a complete SVG object through a python function?
+e.g.
+```def call_the_blob_svg()
+    with open ('blob.svg') as f:
+        return f
+```
+
 # note
 Drawing with SVG turtle doesn't show you the animation! I use VS Code Live Server to view the SVG in the browser.
 
