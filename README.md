@@ -10,6 +10,9 @@ Playing around.
 # pypi
 https://donkirkby.github.io/svg-turtle/
 
+# current state
+Stuff is broken. I need to fix it.
+
 # question
 How can I call a complete SVG object through a python function?
 e.g.

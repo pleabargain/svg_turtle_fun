@@ -98,6 +98,15 @@ def draw_tangent_circle():
         t.circle(r * i)
 
 
+# create a trefoil
+def draw_trefoil():
+    pendown()
+    for i in range (3):
+        circle(100,240)
+        right(120)
+
+
+
 def draw_spiral_circle():
     r = 10
 # Loop for printing spiral circle
