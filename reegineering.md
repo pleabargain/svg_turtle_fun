@@ -19,7 +19,9 @@ rewrite each function
 
 all turtle commands must be fraction of the radius
 
-example
+example but doesn't work
+
+Still need to center INSIDE the object not just the grid.
 
 RADIUS = 100
 

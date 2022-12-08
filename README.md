@@ -13,6 +13,13 @@ https://donkirkby.github.io/svg-turtle/
 # current state
 It works.
 
+run
+
+geometric_turtle_SVG_drawing.py
+
+# next steps
+see the reengineering document
+
 # question
 How can I call a complete SVG object through a python function?
 e.g.
