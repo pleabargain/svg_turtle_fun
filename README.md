@@ -11,7 +11,7 @@ Playing around.
 https://donkirkby.github.io/svg-turtle/
 
 # current state
-Stuff is broken. I need to fix it.
+It works.
 
 # question
 How can I call a complete SVG object through a python function?

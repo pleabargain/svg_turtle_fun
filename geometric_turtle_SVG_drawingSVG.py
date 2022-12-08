@@ -13,8 +13,8 @@ from svg_turtle import SvgTurtle
 
 #set the size of the turtle screen
 # uppercase
-screenheighty = 1000
-screenwidthx = 1000
+screenheighty = 5000
+screenwidthx = 5000
 t = SvgTurtle(screenwidthx, screenheighty, )
 
 rows = 5
@@ -61,24 +61,13 @@ def draw_concentric_triangle(side):
         t.left(120)
         side -= 10
  
-         
-# Forming the window screen
-    
-    # t.color("orange")
-    
-         
     
     # for different shapes
     side = 300
     for i in range(10):
         draw_concentric_triangle(side)
         side -= 30
-
-draw_concentric_triangle(100)
-
-
-
-
+        t.penup()
 
 
 
@@ -100,10 +89,10 @@ def draw_tangent_circle():
 
 # create a trefoil
 def draw_trefoil():
-    pendown()
+    
     for i in range (3):
-        circle(100,240)
-        right(120)
+        t.circle(100,240)
+        t.right(120)
 
 
 
@@ -196,52 +185,64 @@ def draw_benzene_spiral():
 
 
 # this should work! :(
-# all_functions = [#  draw_benzene_spiral,
-#                 #  draw_spiral_of_squares,
-#                 # draw_rotation,
-#                 # draw_square, 
-#                 #  find_center,
-#                  draw_circle, 
-#                 # find_center,
-#                 draw_star,
-#                 # find_center,
-#                  draw_triangle,
-#                 # find_center,
-#                  draw_hexagon,
-#                 ]
+all_functions = [
+                #draw_benzene_spiral,
+                draw_trefoil,
+                #  draw_spiral_of_squares,
+                # draw_rotation,
+                # draw_square, 
+                #  find_center,
+                 draw_circle, 
+                # find_center,
+                draw_star,
+                # find_center,
+                 draw_triangle,
+                # find_center,
+                 draw_hexagon,
+                ]
 
 # for i in all_functions:
 #     i()
 
 # save the drawing
 # go to lower left corner cell
-# i = 0
-# t.penup()
-# t.goto(-screenwidthx/2, screenheighty/2)
-# for y in range(rows):
-#     for x in range(cols):
-#         t.pensize(5)
-#         t.penup()
-#         t.goto(-screenwidthx/2 + x*width,screenheighty/2 - y*height)
-#         t.pendown()
-#         #now at top lop left of cell
-#         #draw a square
-#         for _ in range(2):
-#             t.forward(width)
-#             t.right(90)
-#             t.forward(height)
-#             t.right(90)
-#         # center of cell
-#         t.penup()
-#         t.goto(-screenwidthx/2 + x*width + width/2,screenheighty/2 - y*height - height/2)
-#         t.pendown()
-#         # t.set_heading(0)
-#         func = all_functions[i%len(all_functions) ]
-#         draw_rotation(60, func)
-#         i += 1
-        
-t.save_as(time_stamp + 'circle_square_example.svg')
+def draw_grid():
+    i = 0
+    t.penup()
+    t.goto(-screenwidthx/2, screenheighty/2)
+    for y in range(rows):
+        for x in range(cols):
+            t.pensize(5)
+            t.penup()
+            t.goto(-screenwidthx/2 + x*width,screenheighty/2 - y*height)
+            t.pendown()
+            #now at top lop left of cell
+            #draw a square
+            for _ in range(2):
+                t.forward(width)
+                t.right(90)
+                t.forward(height)
+                t.right(90)
+            # center of cell
+            t.penup()
+            t.goto(-screenwidthx/2 + x*width + width/2,screenheighty/2 - y*height - height/2)
+            t.pendown()
+            # t.set_heading(0)
+            func = all_functions[i%len(all_functions) ]
+            func()
+            # draw_rotation(60, func)
+            i += 1
+            
+def master_func():
+    # do important stuff
+    # draw a square
+    draw_grid()
+    # draw_circle()
 
-#run the function
-# all_functions()
+    t.save_as(time_stamp + '_grid.svg')
+
+
+if __name__ == '__main__':
+    master_func()
+    # t.done()
 
