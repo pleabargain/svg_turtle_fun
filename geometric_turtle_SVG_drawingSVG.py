@@ -42,6 +42,13 @@ def draw_hexagon():
 
 
 
+
+def draw_new_triangle (radius):
+    for i in range (3):
+        t.left(120)
+        t.forward(radius)
+
+
 # create a function that draws a square
 def draw_square():
     for i in range(4):
@@ -187,18 +194,19 @@ def draw_benzene_spiral():
 # this should work! :(
 all_functions = [
                 #draw_benzene_spiral,
-                draw_trefoil,
+                # draw_trefoil,
+                draw_new_triangle,
                 #  draw_spiral_of_squares,
                 # draw_rotation,
                 # draw_square, 
                 #  find_center,
-                 draw_circle, 
+                #  draw_circle, 
                 # find_center,
-                draw_star,
+                # draw_star,
                 # find_center,
-                 draw_triangle,
+                #  draw_triangle,
                 # find_center,
-                 draw_hexagon,
+                #  draw_hexagon,
                 ]
 
 # for i in all_functions:
@@ -229,7 +237,8 @@ def draw_grid():
             t.pendown()
             # t.set_heading(0)
             func = all_functions[i%len(all_functions) ]
-            func()
+            radius = min(width, height)/2
+            func(radius)
             # draw_rotation(60, func)
             i += 1
             
