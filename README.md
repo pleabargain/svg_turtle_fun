@@ -5,10 +5,31 @@ https://github.com/pleabargain/svg_turtle_fun
 https://artificialintelligencestechnology.com/python/draw-alphabets-with-python-turtle/
 
 # svg_turtle_fun
-Playing around.
+Playing around. 
+
+# ideas
+
+excercise: create an API that calls the various functions and displays them as SVG
+
+
 
 # pypi
 https://donkirkby.github.io/svg-turtle/
+
+# grid overlay next steps
+use draw turtle grid for debugging geometry of new SVG objects
+
+use case
+
+1. user wants to correct geometry of SVG output
+2. user calls function of obj1
+3. user calls grid function
+4. obj1 and grid are both displayed
+5. user manually fixes obj1 geometry
+
+e.g.
+run draw_smiley_face on top of draw_turtle_grid
+
 
 # current state
 It works.
