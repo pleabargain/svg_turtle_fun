@@ -4,6 +4,20 @@ https://github.com/pleabargain/svg_turtle_fun
 # alphabet in turtle
 https://artificialintelligencestechnology.com/python/draw-alphabets-with-python-turtle/
 
+
+# going to take a look at
+
+https://github.com/AUTOMATIC1111/stable-diffusion-webui
+
+and
+
+https://github.com/GeorgLegato/Txt2Vectorgraphics
+
+# need to learn more about
+* geometry
+* if name ==
+
+
 # svg_turtle_fun
 Playing around. 
 
