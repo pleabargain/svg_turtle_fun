@@ -51,6 +51,10 @@ def draw_new_triangle (radius):
 
 # create a function that draws a square
 def draw_square():
+    t.forward(-50)
+    t.right(90)
+    t.forward(-50)
+    t.left(90)
     for i in range(4):
         t.forward(100)
         t.right(90)
@@ -77,6 +81,22 @@ def draw_concentric_triangle(side):
         t.penup()
 
 
+# create a centered cirle
+def draw_centered_circle(radius):
+    t.penup()
+    if radius >0:
+        t.left(90)
+    else:
+        t.right(90)
+    t.forward(abs(radius))
+    if radius >0:
+        t.right(90)
+    else:
+        t.left(90)
+    t.pendown()
+    
+    t.circle(radius)
+
 
 # create a function that draws a circle
 def draw_circle():
@@ -85,10 +105,8 @@ def draw_circle():
 def draw_tangent_circle():
     # radius for smallest circle
     r = 10
-    
     # number of circles
     n = 10
-    
     # loop for printing tangent circles
     for i in range(1, n + 1, 1):
         t.circle(r * i)
@@ -167,9 +185,7 @@ def draw_rotations_of_squares():
     for i in range(int(360/range_variable)):
         draw_square()
         t.right(range_variable)
-    # for i in range(5):
-    #     draw_square()
-    #     t.right(5)
+  
 
 
 def draw_benzene_spiral():
@@ -253,7 +269,8 @@ all_functions = [
                 #draw_benzene_spiral,
                 # draw_trefoil,
                 # draw_bird,
-                draw_new_triangle,
+                #draw_centered_circle,
+                draw_rotations_of_squares,
                 #  draw_spiral_of_squares,
                 # draw_rotation,
                 # draw_square, 
@@ -296,7 +313,7 @@ def draw_grid():
             # t.set_heading(0)
             func = all_functions[i%len(all_functions) ]
             radius = min(width, height)/2
-            func(radius)
+            func()
             # draw_rotation(60, func)
             i += 1
             

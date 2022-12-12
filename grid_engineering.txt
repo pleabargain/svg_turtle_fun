@@ -1,0 +1,15 @@
+engineering
+
+draw grid
+then put SVG object on the grid
+
+match the canvas size of both objects
+
+pass the canvas size as an arg to the SVG object (grid and object)
+
+ideally
+
+call the function to draw the grid and pass the object as an arg
+
+example
+grid.py -500 birdobject

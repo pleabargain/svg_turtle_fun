@@ -144,7 +144,7 @@ def draw_smiley_face():
     t.pendown()
     t.right(90)
     t.circle(50, 180)
-    t.save_as(time_stamp + 'smiley_face_example.svg')
+    # t.save_as(time_stamp + 'smiley_face_example.svg')
 
 #run the function
 draw_smiley_face()

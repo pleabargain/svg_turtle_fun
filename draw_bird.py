@@ -5,8 +5,7 @@ from svg_turtle import SvgTurtle
 time_stamp = (str(datetime.datetime.now().hour) + "_" + str(datetime.datetime.now().minute))
 t = SvgTurtle(500, 500)
 
-
-def draw_bird():
+def draw_bird(t):
     # Create a new turtle
 
     # Set the pen color and size
@@ -68,8 +67,9 @@ def draw_bird():
     t.hideturtle()
 
     # Call the function to draw the bird
-    t.save_as(time_stamp + '_bird.svg')
 
     # Call the function to draw the bird
 
-draw_bird()    
+if __name__ == '__main__':
+    draw_bird(t)    
+    t.save_as(time_stamp + '_bird.svg')
